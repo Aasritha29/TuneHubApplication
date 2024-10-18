@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/addplaylist" method="post">
+<label>Playlist Name</label>
+<input type="text" name="songname">
+<br><br>
+<div th:each="songslist:${songslist}">
+   <!-- for mapping we are using songslistid*/-->
+   <input type="checkbox" th:name="songslist" th:value="${songslist.id}"/>
+   <!--id corresponding songname-->
+   <label th:text="${songslist.songname}"></label>
+</div>
+<input type="submit" value="ADD PLAYLIST">
+</form>
+
+</body>
+</html>
